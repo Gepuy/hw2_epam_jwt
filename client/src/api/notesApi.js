@@ -1,21 +1,31 @@
-import axios from "axios";
+import {$authHost} from "./index";
 
-const $host = axios.create({
-    baseURL: process.env.BACKEND_API_URL
-})
-
-const $authHost = axios.create({
-    baseURL: process.env.BACKEND_API_URL
-});
-
-// const authInterceptor = config => {
-//     config.headers.Authorization = `Bearer ${localStorage.getItem('token')}`;
-//     return config;
-// }
-
-// $authHost.interceptors.request.use(authInterceptor);
-
-export {
-    $host,
-    $authHost,
+export const getUserNotes = async () => {
+    const {data} = await $authHost.get('api/notes');
+    return data;
 }
+
+export const addUserNote = async () => {
+
+}
+
+export const getOneUserNote = async () => {
+
+}
+
+export const updateUserNote = async () => {
+
+}
+
+export const checkUserNote = async () => {
+
+}
+
+export const deleteUserNote = async () => {
+
+}
+
+
+
+
+
