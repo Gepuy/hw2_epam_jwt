@@ -1,25 +1,32 @@
 import React, {useState} from 'react';
 import {Button, Card, Container, Form} from "react-bootstrap";
-import {LOGIN_ROUTE, REGISTRATION_ROUTE} from "../utils/consts";
+import {LOGIN_ROUTE, NOTES_ROUTE, REGISTRATION_ROUTE} from "../utils/consts";
 import {NavLink, useLocation, useNavigate} from "react-router-dom";
 import {login, registration} from "../api/userApi";
+import {useAction} from "../store/hooks/useAction";
+
 
 const AuthPage = () => {
+    const {getAuthUserData, setUserAuthStatus} = useAction();
     const location = useLocation();
+    const navigator = useNavigate()
     const isLogin = location.pathname === LOGIN_ROUTE;
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
 
     const auth = async () => {
         try {
-            let data;
             if(isLogin) {
-                data = await login(username, password);
+                await login(username, password);
+                await getAuthUserData();
+                setUserAuthStatus(true);
+                navigator(NOTES_ROUTE);
             } else {
-                data = await registration(username, password);
+                await registration(username, password);
+                navigator(LOGIN_ROUTE);
             }
         } catch (e) {
-            console.log(e.response.data.message)
+            console.log(e)
         }
     }
 

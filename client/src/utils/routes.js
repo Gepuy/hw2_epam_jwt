@@ -8,10 +8,6 @@ export const authRoutes = [
         path: USER_ROUTE,
         Component: UserPage,
     },
-    {
-        path: NOTES_ROUTE,
-        Component: NotesPage
-    },
 ]
 
 export const publicRoutes = [
@@ -22,5 +18,9 @@ export const publicRoutes = [
     {
         path: REGISTRATION_ROUTE,
         Component: AuthPage,
+    },
+    {
+        path: NOTES_ROUTE,
+        Component: NotesPage
     },
 ]

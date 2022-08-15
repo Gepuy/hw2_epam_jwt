@@ -1,11 +1,13 @@
 import {Routes, Route, Navigate} from 'react-router-dom';
 import {authRoutes, publicRoutes} from '../utils/routes';
 import {NOTES_ROUTE} from "../utils/consts";
+import {useSelector} from "react-redux";
 
 const AppRouter = () => {
+    const user = useSelector(state=> state.user);
     return (
         <Routes>
-            {authRoutes.map(({path, Component}) => (
+            {user.isAuth && authRoutes.map(({path, Component}) => (
                 <Route key={path} path={path} element={<Component/>} exact/>
             ))}
             {publicRoutes.map(({path, Component}) => (
