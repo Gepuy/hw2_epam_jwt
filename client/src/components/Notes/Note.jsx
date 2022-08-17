@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import {useState} from 'react';
 import {AiOutlineDelete, AiOutlineEdit} from "react-icons/ai";
 import {useAction} from "../../store/hooks/useAction";
 import EditNote from "./modals/EditNote";

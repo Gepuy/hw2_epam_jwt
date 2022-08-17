@@ -3,6 +3,7 @@ import NotesList from "../components/Notes/NotesList";
 
 const NotesPage = () => {
     const user = useSelector(state => state.user);
+
     return (
         <div
             className={'bg-light'}

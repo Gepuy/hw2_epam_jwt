@@ -7,13 +7,13 @@ import {useAction} from "../store/hooks/useAction";
 
 
 const AuthPage = () => {
-    const [error, setError] = useState('');
     const {getAuthUserData, setUserAuthStatus} = useAction();
     const location = useLocation();
-    const navigator = useNavigate()
+    const navigator = useNavigate();
     const isLogin = location.pathname === LOGIN_ROUTE;
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [error, setError] = useState('');
 
     const auth = async () => {
         try {
@@ -65,7 +65,6 @@ const AuthPage = () => {
                                 Do you have an account? <NavLink to={LOGIN_ROUTE}>Sign in!</NavLink>
                             </div>
                         }
-
                         <Button onClick={auth} variant={'outline-success'}>
                             {isLogin ? 'Sign in' : 'Sign up'}
                         </Button>

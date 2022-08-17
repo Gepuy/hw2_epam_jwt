@@ -6,10 +6,10 @@ import {useAction} from "../../store/hooks/useAction";
 import {useSelector} from "react-redux";
 
 const NotesList = () => {
-    const [modalVisible, setModalVisible] = useState(false);
     const notes = useSelector(state => state.notes.userNotes);
-    const loading = useSelector(state => state.notes.loading)
+    const loading = useSelector(state => state.notes.loading);
     let {setUserNotes, setLoading} = useAction();
+    const [modalVisible, setModalVisible] = useState(false);
 
     useEffect(() => {
         setLoading(true)

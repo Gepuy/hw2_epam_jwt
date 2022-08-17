@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import {useState} from 'react';
 import {Button, Form, Modal} from "react-bootstrap";
 import {useAction} from "../../../store/hooks/useAction";
 
@@ -10,6 +10,7 @@ const EditNote = ({show, onHide, noteText, noteId}) => {
         await editUserNote(noteId, text);
         onHide();
     }
+
     return (
         <Modal
             show={show}
@@ -35,7 +36,10 @@ const EditNote = ({show, onHide, noteText, noteId}) => {
             </Modal.Body>
             <Modal.Footer>
                 <Button variant={'outline-secondary'} onClick={onHide}>Close</Button>
-                <Button variant={'outline-success'} onClick={() => editNote(noteId, newNoteText)}>Edit Note</Button>
+                <Button
+                    variant={'outline-success'}
+                    onClick={() => editNote(noteId, newNoteText)}
+                >Edit Note</Button>
             </Modal.Footer>
         </Modal>
     );

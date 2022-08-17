@@ -9,6 +9,7 @@ const UserPage = () => {
     const user = useSelector(state => state.user.user);
     const [changePasswordVisible, setChangePasswordVisible] = useState(false);
     const [deleteAccountVisible, setDeleteAccountVisible] = useState(false);
+
     return (
         <div
             className="d-flex justify-content-center align-items-center bg-light"
@@ -22,13 +23,23 @@ const UserPage = () => {
                         <p>email@email.com</p>
                     </div>
                     <div className={'d-flex justify-content-between w-75'}>
-                        <Button onClick={() => setChangePasswordVisible(true)}>Change password</Button>
-                        <Button onClick={() => setDeleteAccountVisible(true)} variant={'danger'}>Delete account</Button>
+                        <Button
+                            onClick={() => setChangePasswordVisible(true)}
+                        >Change password</Button>
+                        <Button
+                            onClick={() => setDeleteAccountVisible(true)}
+                            variant={'danger'}
+                        >Delete account</Button>
                     </div>
                 </div>
             </Card>
-            <ChangePassword show={changePasswordVisible} onHide={() => setChangePasswordVisible(false)} />
-            <DeleteAccount show={deleteAccountVisible} onHide={() => setDeleteAccountVisible(false)} />
+            <ChangePassword
+                show={changePasswordVisible}
+                onHide={() => setChangePasswordVisible(false)}
+            />
+            <DeleteAccount
+                show={deleteAccountVisible}
+                onHide={() => setDeleteAccountVisible(false)} />
         </div>
     );
 };

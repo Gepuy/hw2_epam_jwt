@@ -1,4 +1,4 @@
-import {changeUserPassword, deleteUserProfile, getUserInfo} from "../../api/userApi";
+import {deleteUserProfile, getUserInfo} from "../../api/userApi";
 import {ActionTypes} from "../consts/ActionTypes";
 
 export const getAuthUserData = () => {

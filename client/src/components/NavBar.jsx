@@ -1,4 +1,3 @@
-import React from 'react';
 import {Button, Container, Nav, Navbar} from "react-bootstrap";
 import {NavLink, useNavigate} from "react-router-dom";
 import {LOGIN_ROUTE, NOTES_ROUTE, USER_ROUTE} from "../utils/consts";
@@ -10,6 +9,7 @@ const NavBar = () => {
     const navigator = useNavigate();
     const user = useSelector(state => state.user);
     const {logout} = useAction();
+
     return (
         <Navbar bg="dark" variant="dark">
             <Container>

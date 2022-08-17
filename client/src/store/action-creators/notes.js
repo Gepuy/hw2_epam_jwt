@@ -36,5 +36,4 @@ export const removeUserNote = (id) => {
     }
 }
 
-
 export const setLoading = (state) => ({type: ActionTypes.SET_NOTES_LOADING, payload: state})
