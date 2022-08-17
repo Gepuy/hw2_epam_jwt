@@ -16,7 +16,7 @@ const AuthPage = () => {
 
     const auth = async () => {
         try {
-            if(isLogin) {
+            if (isLogin) {
                 await login(username, password);
                 await getAuthUserData();
                 setUserAuthStatus(true);
@@ -32,7 +32,7 @@ const AuthPage = () => {
 
     return (
         <Container
-            className={'d-flex justify-content-center align-items-center'}
+            className={'d-flex justify-content-center align-items-center bg-light'}
             style={{height: window.innerHeight - 54}}
         >
             <Card style={{width: 550}} className={"p-5"}>

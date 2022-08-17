@@ -14,7 +14,6 @@ export const setUserAuthStatus = (status) => ({
 })
 
 export const logout = () => {
-    setUserAuthStatus(false);
     return dispatch => {
         localStorage.removeItem('token');
         dispatch({type: ActionTypes.SET_USER_PROFILE, payload: {}});

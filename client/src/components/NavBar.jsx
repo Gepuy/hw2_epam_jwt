@@ -4,7 +4,7 @@ import {NavLink, useNavigate} from "react-router-dom";
 import {LOGIN_ROUTE, NOTES_ROUTE, USER_ROUTE} from "../utils/consts";
 import {useSelector} from "react-redux";
 import {useAction} from "../store/hooks/useAction";
-import { AiOutlineUser } from 'react-icons/ai';
+import {AiOutlineUser} from 'react-icons/ai';
 
 const NavBar = () => {
     const navigator = useNavigate();
@@ -13,7 +13,7 @@ const NavBar = () => {
     return (
         <Navbar bg="dark" variant="dark">
             <Container>
-                <NavLink className={'text-decoration-none'} style={{color: 'white'}} to={NOTES_ROUTE}>
+                <NavLink className={'text-decoration-none fs-5'} style={{color: 'white'}} to={NOTES_ROUTE}>
                     Notes Service
                 </NavLink>
                 {user.isAuth ?
