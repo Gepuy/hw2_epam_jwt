@@ -4,4 +4,4 @@ export const ActionTypes = {
     SET_USER_NOTES: 'SET_USER_NOTES',
     DELETE_USER_NOTE: 'DELETE_USER_NOTE',
     SET_NOTES_LOADING: 'SET_NOTES_LOADING'
-}
+};

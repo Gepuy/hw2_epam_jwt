@@ -4,6 +4,6 @@ import * as NotesActionCreator from './notes'
 const ActionCreators = {
     ...UserActionCreator,
     ...NotesActionCreator
-}
+};
 
-export default ActionCreators
+export default ActionCreators;
