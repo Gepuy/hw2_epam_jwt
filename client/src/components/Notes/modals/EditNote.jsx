@@ -6,11 +6,9 @@ const EditNote = ({show, onHide, noteText, noteId}) => {
     let [newNoteText, setNewNoteText] = useState(noteText);
     const {editUserNote} = useAction();
 
-    const editNote = (text) => {
-        editUserNote(noteId, text).then(() => {
-            setNewNoteText('');
-            onHide();
-        })
+    const editNote = async (noteId, text) => {
+        await editUserNote(noteId, text);
+        onHide();
     }
     return (
         <Modal
@@ -36,8 +34,8 @@ const EditNote = ({show, onHide, noteText, noteId}) => {
                 </Form>
             </Modal.Body>
             <Modal.Footer>
-                <Button variant={'outline-danger'} onClick={onHide}>Close</Button>
-                <Button variant={'outline-success'} onClick={() => editNote(newNoteText)}>Edit Note</Button>
+                <Button variant={'outline-secondary'} onClick={onHide}>Close</Button>
+                <Button variant={'outline-success'} onClick={() => editNote(noteId, newNoteText)}>Edit Note</Button>
             </Modal.Footer>
         </Modal>
     );

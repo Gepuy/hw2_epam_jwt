@@ -1,4 +1,4 @@
-import {getUserInfo} from "../../api/userApi";
+import {changeUserPassword, deleteUserProfile, getUserInfo} from "../../api/userApi";
 import {ActionTypes} from "../consts/ActionTypes";
 
 export const getAuthUserData = () => {
@@ -16,6 +16,14 @@ export const setUserAuthStatus = (status) => ({
 export const logout = () => {
     return dispatch => {
         localStorage.removeItem('token');
+        dispatch({type: ActionTypes.SET_USER_PROFILE, payload: {}});
+        dispatch(setUserAuthStatus(false));
+    }
+}
+
+export const deleteAccount = () => {
+    return async dispatch => {
+        await deleteUserProfile();
         dispatch({type: ActionTypes.SET_USER_PROFILE, payload: {}});
         dispatch(setUserAuthStatus(false));
     }

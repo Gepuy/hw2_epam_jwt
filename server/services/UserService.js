@@ -22,13 +22,17 @@ class UserService {
 
   async changeUserPassword(oldPassword, newPassword, userInfo) {
     const user = await User.findOne({_id: userInfo.id});
+    if (!oldPassword.trim().length || !newPassword.trim().length) {
+      throw ApiError.badRequest('Please enter info into both fields');
+    }
+
     if (!user) {
       throw ApiError.badRequest('Unauthorized');
     }
     const isPasswordCorrect = await bcrypt.compare(oldPassword, user.password);
 
     if (!isPasswordCorrect) {
-      throw ApiError.badRequest('Password is incorrect');
+      throw ApiError.badRequest('Current password is incorrect');
     }
 
     const hashedPassword = await bcrypt.hash(newPassword, 7);

@@ -36,7 +36,7 @@ const AddNote = ({show, onHide}) => {
                 </Form>
             </Modal.Body>
             <Modal.Footer>
-                <Button variant={'outline-danger'} onClick={onHide}>Close</Button>
+                <Button variant={'outline-secondary'} onClick={onHide}>Close</Button>
                 <Button variant={'outline-success'} onClick={() => addNote(noteText)}>Add Note</Button>
             </Modal.Footer>
         </Modal>

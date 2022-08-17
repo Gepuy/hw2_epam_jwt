@@ -17,7 +17,7 @@ export const getUserInfo = async () => {
     return data;
 }
 
-export const deleteUserProfile = async (user) => {
+export const deleteUserProfile = async () => {
     await $authHost.delete('api/users/me');
 }
 
