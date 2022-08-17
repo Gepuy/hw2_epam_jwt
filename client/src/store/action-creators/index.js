@@ -1,7 +1,9 @@
 import * as UserActionCreator from './user';
 import * as NotesActionCreator from './notes'
 
-export default {
+const ActionCreators = {
     ...UserActionCreator,
     ...NotesActionCreator
 }
+
+export default ActionCreators
